@@ -1,0 +1,46 @@
+{
+  "name": "trackutil",
+  "version": "0.0.1",
+  "description": "A library to process geolocation tracks like GPX and KML.",
+  "homepage": "https://github.com/oyo/trackutil#readme",
+  "bugs": {
+    "url": "https://github.com/oyo/trackutil/issues"
+  },
+  "license": "MIT",
+  "author": "Martin Rohrmeier <roryphant@gmail.com> (oyo)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oyo/trackutil.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "check": "vp check",
+    "prepublishOnly": "vp run build",
+    "simplify": "ts-node src/scripts/simplify.ts"
+  },
+  "dependencies": {
+    "@nodable/flexible-xml-parser": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.2",
+    "@typescript/native-preview": "7.0.0-dev.20260509.2",
+    "bumpp": "^11.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  }
+}

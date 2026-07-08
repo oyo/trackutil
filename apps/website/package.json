@@ -1,0 +1,23 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "build": "tsc && vp build",
+    "preview": "vp preview"
+  },
+  "dependencies": {
+    "drop.that": "^0.0.5",
+    "leaflet": "^1.9.4",
+    "trackutil": "link:../../packages/trackutil"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21",
+    "typescript": "~6.0.3",
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.2",
+    "vite-plugin-node-polyfills": "catalog:",
+    "vite-plus": "catalog:"
+  }
+}
