@@ -39,6 +39,7 @@ jobs:
 
       - uses: voidzero-dev/setup-vp@v1
         with:
+          working-directory: ./packages/trackutil
           node-version: '24'
           cache: true
 
