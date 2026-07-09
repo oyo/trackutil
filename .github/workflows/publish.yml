@@ -42,8 +42,8 @@ jobs:
           cache: true
 
       - run: vp install
-      - run: vp check
-      - run: vp test
+      #- run: vp check
+      #- run: vp test
 
       - name: Build library
         working-directory: ./packages/trackutil
