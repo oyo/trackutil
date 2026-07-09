@@ -52,8 +52,6 @@ jobs:
       - name: Publish library to NPM
         working-directory: ./packages/trackutil
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}
 
       - name: Build webapp
         working-directory: ./apps/website
