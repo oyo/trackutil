@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "preview": "vp preview"
   },
   "dependencies": {
-    "drop.that": "^0.0.5",
+    "drop.that": "^0.1.1",
     "leaflet": "^1.9.4",
     "trackutil": "link:../../packages/trackutil"
   },

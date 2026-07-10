@@ -1,6 +1,6 @@
 {
   "name": "trackutil",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A library to process geolocation tracks like GPX and KML.",
   "homepage": "https://github.com/oyo/trackutil#readme",
   "bugs": {

@@ -11,9 +11,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
 }).addTo(map)
 mapp.classList.add('hide')
-const input = await dropIn({
-  apiIn: './track.gpx',
-})
+const input = await (
+  await dropIn({
+    url: './track.gpx',
+  })
+).text()
 mapp.classList.remove('hide')
 const output = simplify(parseGPX(input), 0.000005) as TrkPoint[]
 const bbox = getBBox(output)
