@@ -2,7 +2,7 @@
 
 import type { BBox, Point } from '../types.ts'
 
-export const simplify = (points: Point[], tolerance: number): Point[] => {
+export const simplify = (points: Point[], tolerance: number = 5e-6): Point[] => {
   let dmax = 0
   let index = 0
 
@@ -28,7 +28,7 @@ export const simplify = (points: Point[], tolerance: number): Point[] => {
   return results
 }
 
-export const getBBox = (points: Point[]) =>
+export const getBBox = (points: Point[]): BBox =>
   points.reduce(
     (a: BBox, p: Point) => {
       if (p.lon > a.max.lon) a.max.lon = p.lon
@@ -79,15 +79,15 @@ export class Line {
     return this.p1.lat === this.p2.lat
   }
 
-  _perpendicularDistanceHorizontal(point: Point): number {
+  protected _perpendicularDistanceHorizontal(point: Point): number {
     return Math.abs(this.p1.lat - point.lat)
   }
 
-  _perpendicularDistanceVertical(point: Point): number {
+  protected _perpendicularDistanceVertical(point: Point): number {
     return Math.abs(this.p1.lon - point.lon)
   }
 
-  _perpendicularDistanceHasSlope(point: Point): number {
+  protected _perpendicularDistanceHasSlope(point: Point): number {
     const slope = this.slope()
     return (
       Math.abs(slope * point.lon - point.lat + this.yIntercept()) /

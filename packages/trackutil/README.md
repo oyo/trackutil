@@ -1,23 +1,31 @@
-# vite-plus-starter
+# trackutil
 
-A starter for creating a Vite Plus project.
+Simple tool to process geolocation tracks like GPX and KML.
 
-## Development
+### Usage
 
-- Install dependencies:
+Install library
 
 ```bash
-vp install
+npm i trackutil
 ```
 
-- Run the unit tests:
+Simplify track from command line
 
 ```bash
-vp test
+node -e "import t from 'trackutil';t()" - /path/to/track.gpx
 ```
 
-- Build the library:
+Use in code
 
-```bash
-vp pack
+```javascript
+import fs from 'fs'
+import { parseGPX, formatGPX, getBBox, simplify } from 'trackutil'
+
+const track = parseGPX(fs.readFileSync('/path/to/track.gpx'))
+const simple = simplify(track)
+console.log(`${track.length} -> ${simple.length}`)
+const bbox = getBBox(simple)
+console.log(bbox)
+fs.writeFileSync('./simple.gpx', formatGPX(simple))
 ```
