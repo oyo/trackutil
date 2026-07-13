@@ -3,5 +3,13 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
 export default defineConfig({
   base: '/trackutil/',
-  plugins: [nodePolyfills()],
+  plugins: [
+    nodePolyfills({
+      globals: {
+        Buffer: true,
+        global: true,
+        process: false,
+      },
+    }),
+  ],
 })
