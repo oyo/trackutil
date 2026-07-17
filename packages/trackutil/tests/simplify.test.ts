@@ -1,5 +1,5 @@
 import { expect, test } from 'vite-plus/test'
-import { simplify } from '../src/operations/index.ts'
+import { simplifyTrack } from '../src/operations/index.ts'
 
 const samples = [
   {
@@ -28,6 +28,6 @@ const samples = [
 ]
 
 test('simplify', () => {
-  expect(simplify(samples[0].input, 0.1)).toStrictEqual(samples[0].output)
-  expect(simplify(samples[1].input, 0.1)).toStrictEqual(samples[1].output)
+  expect(simplifyTrack(samples[0].input, 0.1)).toStrictEqual(samples[0].output)
+  expect(simplifyTrack(samples[1].input, 0.1)).toStrictEqual(samples[1].output)
 })

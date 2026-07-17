@@ -10,7 +10,9 @@ catalog:
   '@nodable/flexible-xml-parser': ^1.7.0
   '@types/leaflet': ^1.9.21
   '@types/node': ^24
+  dayjs: ^1.11.21
   drop.that: ^0.0.7
+  glob: ^13.0.6
   leaflet: ^1.9.4
   typescript: ^5
   vite: npm:@voidzero-dev/vite-plus-core@0.2.2

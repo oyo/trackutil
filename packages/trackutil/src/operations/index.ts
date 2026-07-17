@@ -2,7 +2,9 @@
 
 import type { BBox, Point } from '../types.ts'
 
-export const simplify = (points: Point[], tolerance: number = 5e-6): Point[] => {
+const DEFAULT_TOLERANCE = 5e-6
+
+export const simplifyTrack = (points: Point[], tolerance: number = DEFAULT_TOLERANCE): Point[] => {
   let dmax = 0
   let index = 0
 
@@ -16,8 +18,8 @@ export const simplify = (points: Point[], tolerance: number = 5e-6): Point[] => 
 
   let results
   if (dmax > tolerance) {
-    const results_one = simplify(points.slice(0, index), tolerance)
-    const results_two = simplify(points.slice(index, points.length), tolerance)
+    const results_one = simplifyTrack(points.slice(0, index), tolerance)
+    const results_two = simplifyTrack(points.slice(index, points.length), tolerance)
     results = results_one.concat(results_two)
   } else if (points.length > 1) {
     results = [points[0], points[points.length - 1]]
@@ -28,13 +30,35 @@ export const simplify = (points: Point[], tolerance: number = 5e-6): Point[] => 
   return results
 }
 
-export const getBBox = (points: Point[]): BBox =>
+export const simplify = (tracks: Point[][], tolerance: number = DEFAULT_TOLERANCE): Point[][] =>
+  tracks.map((track) => simplifyTrack(track, tolerance))
+
+export const getBBoxTrack = (points: Point[]): BBox =>
   points.reduce(
     (a: BBox, p: Point) => {
       if (p.lon > a.max.lon) a.max.lon = p.lon
       if (p.lat > a.max.lat) a.max.lat = p.lat
       if (p.lon < a.min.lon) a.min.lon = p.lon
       if (p.lat < a.min.lat) a.min.lat = p.lat
+      a.center.lon = (a.min.lon + a.max.lon) / 2
+      a.center.lat = (a.min.lat + a.max.lat) / 2
+      return a
+    },
+    {
+      center: { lon: 0, lat: 0 },
+      min: { lon: +Infinity, lat: +Infinity },
+      max: { lon: -Infinity, lat: -Infinity },
+    },
+  )
+
+export const getBBox = (tracks: Point[][]): BBox =>
+  tracks.reduce(
+    (a: BBox, t: Point[]) => {
+      const tbbox = getBBoxTrack(t)
+      if (tbbox.max.lon > a.max.lon) a.max.lon = tbbox.max.lon
+      if (tbbox.max.lat > a.max.lat) a.max.lat = tbbox.max.lat
+      if (tbbox.min.lon < a.min.lon) a.min.lon = tbbox.min.lon
+      if (tbbox.min.lat < a.min.lat) a.min.lat = tbbox.min.lat
       a.center.lon = (a.min.lon + a.max.lon) / 2
       a.center.lat = (a.min.lat + a.max.lat) / 2
       return a

@@ -8,7 +8,7 @@ export default defineConfig({
       globals: {
         Buffer: true,
         global: true,
-        process: false,
+        process: true,
       },
     }),
   ],

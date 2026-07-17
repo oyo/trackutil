@@ -24,4 +24,19 @@
  </trkseg>
 </trk>
 
+<trk>
+ <name>Track 2</name>
+ <trkseg>
+  <trkpt lat="38.81172167" lon="15.21375333"><ele>42.900</ele><time>2026-07-01T00:35:18Z</time><speed>0.172</speed><sat>31</sat></trkpt>
+  <trkpt lat="38.81172667" lon="15.21375333"><ele>42.900</ele><time>2026-07-01T00:35:19Z</time><speed>0.204</speed><sat>32</sat></trkpt>
+  <trkpt lat="38.81171667" lon="15.21374500"><ele>42.700</ele><time>2026-07-01T00:35:20Z</time><speed>0.199</speed><sat>32</sat></trkpt>
+  <trkpt lat="38.81171333" lon="15.21374500"><ele>42.500</ele><time>2026-07-01T00:35:21Z</time><speed>0.198</speed><sat>32</sat></trkpt>
+  <trkpt lat="38.81171333" lon="15.21374500"><ele>42.300</ele><time>2026-07-01T00:35:22Z</time><speed>0.194</speed><sat>32</sat></trkpt>
+  <trkpt lat="38.81171333" lon="15.21375000"><ele>42.700</ele><time>2026-07-01T00:35:23Z</time><speed>0.187</speed><sat>31</sat></trkpt>
+  <trkpt lat="38.81170833" lon="15.21375500"><ele>42.900</ele><time>2026-07-01T00:35:24Z</time><speed>0.174</speed><sat>31</sat></trkpt>
+  <trkpt lat="38.81170667" lon="15.21375333"><ele>42.600</ele><time>2026-07-01T00:35:25Z</time><speed>0.152</speed><sat>32</sat></trkpt>
+  <trkpt lat="38.81170667" lon="15.21375333"><ele>43.000</ele><time>2026-07-01T00:35:26Z</time><speed>0.139</speed><sat>31</sat></trkpt>
+  <trkpt lat="38.81170167" lon="15.21375000"><ele>43.400</ele><time>2026-07-01T00:35:27Z</time><speed>0.000</speed><sat>31</sat></trkpt>
+ </trkseg>
+</trk>
 </gpx>
