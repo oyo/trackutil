@@ -13,7 +13,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 mapp.classList.add('hide')
 const input = await dropIn({
   //url: './2013-Sutomiscica-Sladana.csv',
-  url: './2026-Portorosa-Simba.csv',
+  url: './2026-Portorosa-Simba.gpx',
 })
 //console.log(input.type)
 const text = await input.text()

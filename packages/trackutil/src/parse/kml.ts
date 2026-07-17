@@ -1,6 +1,5 @@
 import XMLParser from '@nodable/flexible-xml-parser'
 import type { TrkPoint } from '../types.ts'
-import dayjs from 'dayjs'
 
 const parser = new XMLParser({
   skip: { declaration: true, attributes: true },
@@ -17,21 +16,21 @@ export const parseKML = (kmlstring: string): TrkPoint[][] => {
       .map((c: number[]) => ({ lon: c[0], lat: c[1], ele: c[2] })),
   )
   // TODO: extract date from proprietary format. remove in future versions.
-  const meta = trks
-    .map((track: any) => parser.parse(track.description.replace(/<hr>/g, '<hr/>')))
-    .map((desc: any) =>
-      desc?.div?.table?.tr
-        .slice(0, 2)
-        .map((cell: any) =>
-          dayjs(cell.td[1].replace('.', ':'), 'DD/MM/YY HH:mm').format('YYYY-MM-DDTHH:mm:ss'),
-        ),
-    )
-  if (meta && meta.length === tracks.length) {
-    tracks.forEach((track: TrkPoint[], i: number) => {
-      track[0].time = meta[i][0]
-      track[track.length - 1].time = meta[i][1]
-    })
-  }
+  //const meta = trks
+  //  .map((track: any) => parser.parse(track.description.replace(/<hr>/g, '<hr/>')))
+  //  .map((desc: any) =>
+  //    desc?.div?.table?.tr
+  //      .slice(0, 2)
+  //      .map((cell: any) =>
+  //        dayjs(cell.td[1].replace('.', ':'), 'DD/MM/YY HH:mm').format('YYYY-MM-DDTHH:mm:ss'),
+  //      ),
+  //  )
+  //if (meta && meta.length === tracks.length) {
+  //  tracks.forEach((track: TrkPoint[], i: number) => {
+  //    track[0].time = meta[i][0]
+  //    track[track.length - 1].time = meta[i][1]
+  //  })
+  //}
   // end proprietary code
   return tracks
 }

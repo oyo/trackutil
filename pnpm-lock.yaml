@@ -205,9 +205,6 @@ settings:
 
 catalogs:
   default:
-    dayjs:
-      specifier: ^1.11.21
-      version: 1.11.21
     vite-plus:
       specifier: 0.2.2
       version: 0.2.2
@@ -259,9 +256,6 @@ importers:
       '@nodable/flexible-xml-parser':
         specifier: ^1.7.0
         version: 1.7.0
-      dayjs:
-        specifier: 'catalog:'
-        version: 1.11.21
     devDependencies:
       '@types/node':
         specifier: ^25.6.2
@@ -1201,9 +1195,6 @@ packages:
   crypto-browserify@3.12.1:
     resolution: {integrity: sha512-r4ESw/IlusD17lgQi1O20Fa3qNnsckR126TdUuBgAu7GBYSIPvdNyONd3Zrxh0xCwA4+6w/TDArBPsMvhur+KQ==}
     engines: {node: '>= 0.10'}
-
-  dayjs@1.11.21:
-    resolution: {integrity: sha512-98IT+HOahAisibz/yjKbzuOBwYcjJ7BCLPzARyHiyEBmRz4fatF+KPJszEHXsGYjUG234aH/cOjW1wwTbKUZlA==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -2703,8 +2694,6 @@ snapshots:
       public-encrypt: 4.0.3
       randombytes: 2.1.0
       randomfill: 1.0.4
-
-  dayjs@1.11.21: {}
 
   debug@4.4.3:
     dependencies:

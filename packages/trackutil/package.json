@@ -1,6 +1,6 @@
 {
   "name": "trackutil",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A library to process geolocation tracks like GPX and KML.",
   "homepage": "https://github.com/oyo/trackutil#readme",
   "bugs": {
@@ -32,8 +32,7 @@
     "simplify": "ts-node ./src/scripts/simplify.ts"
   },
   "dependencies": {
-    "@nodable/flexible-xml-parser": "^1.7.0",
-    "dayjs": "catalog:"
+    "@nodable/flexible-xml-parser": "^1.7.0"
   },
   "devDependencies": {
     "@types/node": "^25.6.2",

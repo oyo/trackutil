@@ -6,8 +6,9 @@ Currently supported:
 - GPX
 - KML
 - CSV (time,lon,lat,ele) - empty line separates tracks
-  This lib will extract track coords for drawing linestrings on a map.
-  All other information like waypoints is ignored.
+
+This lib will extract track coords for drawing linestrings on a map.
+All other information like waypoints is ignored.
 
 ### Usage
 
